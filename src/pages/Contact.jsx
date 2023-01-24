@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import '../styles/sass_pages/contact.scss'
+import Typed from "typed.js";
 
 export default function Contact() {
 
@@ -34,6 +35,22 @@ export default function Contact() {
 
   }
 
+  const textArea = useRef(null);
+  useEffect(() => {
+    const text = new Typed(textArea.current, {
+      strings: ["Digite sua mensagem..."],
+      startDelay: 200,
+      typeSpeed: 90,
+      attr: 'placeholder',
+      bindInputFocusEvents: true,
+      loop: false,
+      showCursor: true
+    });
+    return () => {
+      text.destroy();
+    };
+  }, []);
+
   return (
     <div id='contact'>
       <h1 className='contact-title'>Envie Sua Mensagem</h1>
@@ -51,7 +68,7 @@ export default function Contact() {
           className='contact-email' 
           placeholder='Email:' 
           onChange={(e) => setEmail(e.target.value)} 
-          value={email}
+          value={email}          
         />
 
         <textarea
@@ -59,6 +76,7 @@ export default function Contact() {
           placeholder=' Digite sua mensagem...'
           onChange={(e) => setMessage(e.target.value)}
           value={message}
+          ref={textArea}
         />
 
         <button className='submit' type='submit'>Enviar</button>
