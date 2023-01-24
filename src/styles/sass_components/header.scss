@@ -1,0 +1,59 @@
+@use '../sass/colors';
+@use '../sass/variables.scss';
+
+header{
+
+    padding: 35px;
+
+    #logo{
+        text-decoration:  none;
+        color: colors.$header-text-color;
+        font-size: 40px;
+        font-weight: 900;
+    }
+
+    #navBar{
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        .btn {
+            font-family: variables.$primary-font;
+            font-weight: 500;
+            font-size: 25px;
+            text-decoration: none;
+            color: colors.$header-button-color;
+            transition: 230ms;
+
+                &:hover{
+                    color: colors.$header-text-color;
+                    border-bottom: 1.7px solid colors.$header-text-color;
+                }
+        }
+
+        .contact{
+            margin: 0 20px;
+            margin-left: 50px;
+            padding: 5px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: #fff;
+            background-image: linear-gradient(90deg, #fff 50%, transparent 50%);
+            background-position: 100%;
+            background-size: 400%;
+            transition: background 1s ease-in-out;
+            transition: 1s ease-in-out;
+            
+            &:hover{
+                background-position: 0;
+                color: #000;
+            }
+
+        }
+    }
+}

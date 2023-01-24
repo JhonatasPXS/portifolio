@@ -1,0 +1,87 @@
+@use '../sass/colors';
+@use '../sass/variables.scss';
+
+body {
+    background-image: url(../../assets/img/banner-bg.png);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: repeat;
+    min-width: 100vh;
+    min-height: 100vh;
+    
+
+    #portfolio{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 'header header'
+                             'main astro';
+
+        #header{
+            margin-bottom: 0;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            color: colors.$header-text-color;
+            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 100% 100%;
+            grid-template-rows: 100%;
+            gap: 40%;
+        }
+
+        #logo{
+            grid-area: header;
+            grid-row: 1;
+            grid-column: 1;
+            width: 50%;
+        }
+
+        #navBar{
+            grid-area: header;
+            grid-row: 1;
+            grid-column: 2;
+            width: 50%;
+        }
+        
+        #about, #contact, #home, #skills{
+            grid-area: main;
+            grid-column: 1;
+            width: 100%;
+            padding: 35px;
+            min-height: 80vh;
+        }
+
+        .astro{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-area: astro;
+            grid-column: 2;
+            width: 100%;
+        }
+    }
+    
+
+
+
+    .astronauta{
+        animation: updown 3s linear infinite;
+        background: none;
+
+
+        @keyframes updown {
+            0%{
+                transform: translateY(-20px);
+            }
+            50%{
+                transform: translateY(20px);
+            }
+            100%{
+                transform: translateY(-20px);
+            }
+        }
+    }
+}

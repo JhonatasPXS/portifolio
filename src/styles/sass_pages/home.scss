@@ -1,0 +1,28 @@
+@use '../sass/colors';
+
+#home{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        color: colors.$header-text-color;
+        font-size: 4em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+            
+            .digit{
+                font-size: 1em;
+            }
+        }
+
+    p{
+        color: colors.$header-text-color;
+        font-size: 2rem;
+    }
+}

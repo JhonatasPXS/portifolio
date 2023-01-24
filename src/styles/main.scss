@@ -1,0 +1,9 @@
+@use './sass/variables';
+@use './sass_components/header';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$primary-font;
+}

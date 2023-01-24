@@ -1,0 +1,57 @@
+@use '../sass/variables.scss';
+@use '../sass/colors.scss';
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    min-height: 80vh;
+    max-height: 100vh;
+    
+    .contact-title{
+        color: white;
+        font-size: 50px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+        input, .contact-message, .submit{
+            width: 80%;
+            border-radius: 8px;
+            font-family: variables.$primary-font;
+            font-weight: 500;
+            font-size: 15px;
+            height: 40px;
+            padding-left: 6px;
+        }
+        .contact-message{
+            padding-top: 4px;
+            resize: vertical;
+            height: 150px;
+        }
+        .submit{
+            // background-color: black;
+            border: 2px solid white;
+            color: white;
+            font-size: 30px;
+            background-color: transparent;
+            
+            &:hover{
+                transition: 0.8s;
+                background-color: white;
+                color: black;
+                border: 2px solid black;
+                
+            }
+        }
+            
+    }
+}
